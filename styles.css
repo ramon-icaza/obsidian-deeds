@@ -4,10 +4,12 @@
 
 .deeds-status-done {
 	color: #09ad00;
+	text-decoration: line-through;
 }
 
 .deeds-status-cancelled {
 	color: #ad0000;
+	text-decoration: line-through;
 }
 
 .deeds-status-partial {
