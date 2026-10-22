@@ -1,0 +1,15 @@
+/* Deeds: line highlighting for task statuses.
+   Line colors can be overridden by the user's theme or a CSS snippet
+   (design decision 4). */
+
+.deeds-status-done {
+	color: #09ad00;
+}
+
+.deeds-status-cancelled {
+	color: #ad0000;
+}
+
+.deeds-status-partial {
+	color: #ad9c00;
+}

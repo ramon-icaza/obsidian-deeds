@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "module": "ESNext",
+    "types": ["node"],
+    "target": "ES2018",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "strictFunctionTypes": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true
+  },
+  "include": ["*.ts", "lib/**/*.ts"],
+  "exclude": ["node_modules"]
+}

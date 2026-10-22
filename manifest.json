@@ -1,0 +1,9 @@
+{
+	"id": "deeds",
+	"name": "Deeds",
+	"version": "1.0.0",
+	"minAppVersion": "1.4.0",
+	"description": "Quick task statuses (done / cancelled / partial) with colored line highlighting.",
+	"author": "",
+	"isDesktopOnly": false
+}
