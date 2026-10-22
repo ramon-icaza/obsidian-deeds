@@ -3,12 +3,12 @@
    (design decision 4). */
 
 .deeds-status-done {
-	color: #09ad00;
+	color: #157a10;
 	text-decoration: line-through;
 }
 
 .deeds-status-cancelled {
-	color: #ad0000;
+	color: #870909;
 	text-decoration: line-through;
 }
 
