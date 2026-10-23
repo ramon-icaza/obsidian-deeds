@@ -101,14 +101,21 @@ export default class DeedsPlugin extends Plugin {
 	}
 
 	/** Alt-D / Alt-C / Alt-S: switch status; already in target status resets to `[ ]`.
-	 *  Line length does not change, so the cursor is not moved. */
+	 *  Line length does not change, so the remembered selections stay valid
+	 *  character for character and are restored inside the same transaction. */
 	private toggleStatus(editor: Editor, target: TaskStatus) {
 		const { line } = editor.getCursor();
 		const text = editor.getLine(line);
 		const newLine = setStatus(text, target);
-		if (newLine === text) return; // not a task — the command does nothing
+		if (newLine === text) return; // not a task — no transaction, the cursor does not move
+		const selections = editor.listSelections().map((sel) =>
+			sel.anchor.ch === sel.head.ch && sel.anchor.line === sel.head.line
+				? { from: sel.anchor }
+				: { from: sel.anchor, to: sel.head },
+		);
 		editor.transaction({
 			changes: [{ from: { line, ch: 0 }, to: { line, ch: text.length }, text: newLine }],
+			selections,
 		});
 	}
 }
